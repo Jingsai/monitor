@@ -1,0 +1,12 @@
+#!/bin/bash
+
+make clean
+make p4
+I=13
+J=15
+K=1
+until [ $K -gt 16 ]; do
+   echo -e "\n$K processes";
+   time -p ./p4 -q -p $K -n $I; 
+   let K*=2;
+done

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+make clean
+make p4
+I=1
+J=14
+K=16
+until [ $I -gt $J ]; do
+#   time -p ./p4 -q -p $K -n $I; 
+  ./p4 -q -p $K -n $I; 
+   let I+=1;
+done
